@@ -13,7 +13,6 @@ type Feed struct {
 }
 
 type FeedModel interface {
-  Close()
-  insert(ctx context.Context, feed Feed) error
-  list(ctx context.Context) ([]*Feed, error)
+  Insert(feed Feed) error
+  GetAll(ctx context.Context) ([]*Feed, error)
 }
