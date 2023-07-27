@@ -1,7 +1,6 @@
 package postgres
 
 import (
-	"context"
 	"database/sql"
 
 	"github.com/gh0stl1m/feed-api/domains/entities"
@@ -26,7 +25,7 @@ func (fr *FeedRepository) Insert(feed entities.Feed) error {
   return err
 }
 
-func (fr *FeedRepository) GetAll(ctx context.Context) ([]*entities.Feed, error) {
+func (fr *FeedRepository) GetAll() ([]*entities.Feed, error) {
 
   query := `SELECT title, description, created_at FROM feeds`
   rows, err := fr.db.Query(query)

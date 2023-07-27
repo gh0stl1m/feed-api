@@ -1,7 +1,6 @@
 package entities
 
 import (
-	"context"
 	"time"
 )
 
@@ -14,5 +13,5 @@ type Feed struct {
 
 type FeedModel interface {
   Insert(feed Feed) error
-  GetAll(ctx context.Context) ([]*Feed, error)
+  GetAll() ([]*Feed, error)
 }
